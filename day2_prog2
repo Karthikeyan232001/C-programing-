@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+int n;
+    int digit1, digit2;
+    int sum_of_digits;
+
+    if (scanf("%d", &n) != 1) {
+        printf("Invalid Input\n");
+        return 1; // Indicate an error
+    }
+    if (n >= 10 && n <= 99) {
+        digit1 = n / 10;
+        digit2 = n % 10;
+        sum_of_digits = digit1 + digit2;
+        printf("Sum of Digit %d is %03d\n", n, sum_of_digits);
+    } else { 
+        printf("Invalid Input\n");
+    }
+    return 0;
+}
