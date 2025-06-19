@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+     int hours, minutes, seconds;
+    int total_hours, total_minutes, total_seconds;
+
+    if (scanf("%d %d %d", &hours, &minutes, &seconds) != 3) {
+        printf("Invalid input. Please enter three integers.\n");
+        return 1; 
+    }
+
+   
+    total_seconds = seconds;
+
+    total_minutes = minutes + (total_seconds / 60);
+    total_seconds = total_seconds % 60; 
+
+
+    total_hours = hours + (total_minutes / 60);
+    total_minutes = total_minutes % 60; 
+
+    
+    printf("Total Number of hours is %d\n", total_hours);
+    printf("Total Number of minutes is %d\n", total_minutes);
+    printf("Total Number of seconds is %d\n", total_seconds);
+
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
