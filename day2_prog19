@@ -1,0 +1,40 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+     int balance;      
+    int process_type;
+    int amount;       
+
+   
+    if (scanf("%d %d %d", &balance, &process_type, &amount) != 3) {
+        printf("Invalid Input\n");
+        return 1;
+    }
+
+    switch (process_type) {
+        case 1: 
+            balance += amount; 
+            printf("%d\n", balance); 
+            break;
+        case 2: 
+            if (amount > balance) { 
+                printf("Insufficient Balance\n");
+            } else {
+                balance -= amount; 
+                printf("%d\n", balance); 
+            }
+            break;
+        default: // Invalid process type
+            printf("Invalid Input\n");
+            break;
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    return 0;
+}
