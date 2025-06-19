@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+long long sum_of_divisors(int n) {
+    long long sum = 0;
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+int main() {
+    int num1, num2;
+    long long sum1, sum2;
+
+   
+    if (scanf("%d %d", &num1, &num2) != 2) {
+        
+        printf("Invalid Input\n");
+        return 1;
+    }
+    sum1 = sum_of_divisors(num1);
+    sum2 = sum_of_divisors(num2);
+
+    if (sum1 * num2 == sum2 * num1) {
+        printf("Friendly Pair\n");
+    } else {
+        printf("Not Friendly Pair\n");
+    }
+
+    return 0; 
+}
