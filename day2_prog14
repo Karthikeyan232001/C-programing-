@@ -1,0 +1,29 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+     int rows, columns, tree_number;
+    int actual_column;
+
+    if (scanf("%d %d %d", &rows, &columns, &tree_number) != 3) {
+        printf("Invalid input. Please enter three integers.\n");
+        return 1; 
+    }
+
+    actual_column = (tree_number - 1) / rows + 1;
+
+   
+    if (actual_column == 2 || actual_column == (columns - 1)) {
+        printf("It is a mango tree\n");
+    } else {
+        printf("It is not a mango tree\n");
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    return 0;
+}
