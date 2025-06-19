@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+ int num1, num2;
+    char operator;
+    double result; 
+    printf("Enter two numbers and an operator (e.g., 3 4 +): ");
+    if (scanf("%d %d %c", &num1, &num2, &operator) != 3) {
+        printf("Invalid Input\n"); // Handle cases where input format is incorrect
+        return 1;
+    }
+
+    switch (operator) {
+        case '+':
+            result = (double)num1 + num2;
+            printf("Addition of two number is %.1f\n", result);
+            break;
+        case '-':
+            result = (double)num1 - num2;
+            printf("Subtraction of two number is %.1f\n", result);
+            break;
+        case '*':
+            result = (double)num1 * num2;
+            printf("Multiplication of two number is %.1f\n", result);
+            break;
+        case '/':
+            
+            if (num2 == 0) {
+                printf("Error: Division by zero is not allowed.\n");
+                return 1; 
+            }
+            result = (double)num1 / num2;
+            printf("Division of two number is %.1f\n", result);
+            break;
+        case '%':
+            
+            if (num2 == 0) {
+                printf("Error: Modulo by zero is not allowed.\n");
+                return 1; 
+            }
+            result = (double)num1 % num2; 
+            printf("Modulo of two number is %.1f\n", result);
+            break;
+        default:
+            printf("Invalid Input\n"); 
+            break;
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
