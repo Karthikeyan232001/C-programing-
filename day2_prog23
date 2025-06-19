@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+void check_abundant_number(int num) {
+
+    int sum_of_divisors = 0;
+
+    for (int i = 1; i <= num / 2; i++) {
+        // If 'i' is a divisor of 'num'
+        if (num % i == 0) {
+            sum_of_divisors += i; // Add 'i' to the sum
+        }
+    }
+
+    
+    if (sum_of_divisors > num) {
+        printf("Abundant Number\n");
+    } else {
+        printf("Not Abundant Number\n");
+    }
+}
+
+int main() {
+    int num_input;
+
+    
+    if (scanf("%d", &num_input) == 1) {
+     
+        if (num_input > 0) {
+            check_abundant_number(num_input);
+        } else {
+            fprintf(stderr, "Please enter a positive integer.\n");
+            return 1;
+        }
+    } else {
+        fprintf(stderr, "Invalid input. Please enter an integer.\n");
+        return 1; 
+        
+    }
+
+    return 0; 
+    
+}
+
