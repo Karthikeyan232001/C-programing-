@@ -1,0 +1,24 @@
+#include <stdio.h> 
+
+int main() {
+    int list_size; 
+    double sum = 0.0; 
+    double mean;
+    scanf("%d", &list_size);
+
+    if (list_size <= 0) {
+        printf("Array size must be a positive integer.\n");
+        return 1; 
+    }
+
+    for (int i = 0; i < list_size; i++) {
+        int current_element; 
+        scanf("%d", &current_element);
+        sum += current_element;
+    }
+    mean = sum / list_size;
+
+    printf("Array Mean Value is %.2f\n", mean);
+
+    return 0; 
+}
