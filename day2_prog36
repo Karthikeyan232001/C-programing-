@@ -1,0 +1,25 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+     int n; 
+    if (scanf("%d", &n) != 1) {
+        printf("Invalid Input\n");
+        return 1; 
+    }
+
+    for (int i = 1; i <= n; i++) {
+        long long term = (long long)i * i + 5;
+        printf("%lld", term);
+        if (i < n) {
+            printf(" ");
+        }
+    }
+    printf("\n");
+    return 0;
+}
