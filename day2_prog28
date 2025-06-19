@@ -1,0 +1,35 @@
+#include <stdio.h> 
+
+
+int main() {
+    float speed_mph;     
+    float distance_miles;  
+    float time_until_red_seconds;
+    if (scanf("%f", &speed_mph) != 1) {
+        fprintf(stderr, "Invalid input for speed. Please enter a floating-point number.\n");
+        return 1; 
+    }
+    if (scanf("%f", &distance_miles) != 1) {
+        fprintf(stderr, "Invalid input for distance. Please enter a floating-point number.\n");
+        return 1; 
+    }
+    if (scanf("%f", &time_until_red_seconds) != 1) {
+        fprintf(stderr, "Invalid input for time. Please enter a floating-point number.\n");
+        return 1; 
+    }
+
+    if (speed_mph <= 0 || distance_miles < 0 || time_until_red_seconds < 0) {
+        fprintf(stderr, "Input values (speed, distance, time) must be non-negative, and speed must be positive.\n");
+        return 1;
+    }
+    float speed_mps = speed_mph / 3600.0f;
+
+    float time_to_reach_seconds = distance_miles / speed_mps;
+    if (time_to_reach_seconds < time_until_red_seconds) {
+        printf("Yes\n"); 
+    } else {
+        printf("No\n");  
+    }
+
+    return 0; 
+}
