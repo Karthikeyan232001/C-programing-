@@ -1,0 +1,20 @@
+#include <stdio.h> 
+
+int main() {
+    int list_size;
+    double product = 1.0; 
+
+    scanf("%d", &list_size); 
+    if (list_size < 0) {
+        printf("List size cannot be negative.\n");
+        return 1; 
+    }
+    for (int i = 0; i < list_size; i++) {
+        int value; 
+        scanf("%d", &value); 
+        product *= value; 
+    }
+    printf("The Product of list value is %.2f\n", product);
+
+    return 0; 
+}
