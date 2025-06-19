@@ -1,33 +1,29 @@
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
 
 int main() {
-     int hours, minutes, seconds;
-    int total_hours, total_minutes, total_seconds;
+     int rows, columns, tree_number;
+    int actual_column;
 
-    if (scanf("%d %d %d", &hours, &minutes, &seconds) != 3) {
+    if (scanf("%d %d %d", &rows, &columns, &tree_number) != 3) {
         printf("Invalid input. Please enter three integers.\n");
         return 1; 
     }
 
+    actual_column = (tree_number - 1) / rows + 1;
+
    
-    total_seconds = seconds;
+    if (actual_column == 2 || actual_column == (columns - 1)) {
+        printf("It is a mango tree\n");
+    } else {
+        printf("It is not a mango tree\n");
+    }
 
-    total_minutes = minutes + (total_seconds / 60);
-    total_seconds = total_seconds % 60; 
-
-
-    total_hours = hours + (total_minutes / 60);
-    total_minutes = total_minutes % 60; 
-
-    
-    printf("Total Number of hours is %d\n", total_hours);
-    printf("Total Number of minutes is %d\n", total_minutes);
-    printf("Total Number of seconds is %d\n", total_seconds);
-
-
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     return 0;
 }
